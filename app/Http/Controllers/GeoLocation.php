@@ -8,9 +8,10 @@ class GeoLocation extends Controller
 {
     public function index()
     {
-        $ip =  "122.106.207.106";
-        $data = \Location::get($ip);
-        dd($data);
+        $host = request()->getHttpHost();
+        $ip = ($host == "localhost") ? "103.117.154.18" : $this->getIp();
+        $location_data = \Location::get($ip);
+        return view('location', compact('location_data'));
     }
 
     public function getIp()

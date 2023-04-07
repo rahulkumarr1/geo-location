@@ -13,8 +13,8 @@ use App\Http\Controllers\GeoLocation;
 |
 */
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
 });
 
-Route::get('get-ip-info', [GeoLocation::class, 'index']);
+Route::get('/', [GeoLocation::class, 'index']);
