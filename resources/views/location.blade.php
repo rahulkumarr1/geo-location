@@ -11,7 +11,7 @@
 
     <!-- Favicons -->
     <link href="{{ asset('assets/img/favicon.png') }}" rel="icon">
-    <link href="{{ asset('assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon"> 
+    <link href="{{ asset('assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
     <!-- Vendor CSS Files -->
     <link href="{{ asset('assets/vendor/aos/aos.css') }}" rel="stylesheet">
@@ -88,7 +88,7 @@
                         <div class="col-lg-6">
                             <iframe style="border:0; width: 100%; height: 384px;" allowfullscreen frameborder="0"
                                 scrolling="no" marginheight="0" marginwidth="0"
-                                src="https://maps.google.com/maps?q={{ $location_data->latitude }},{{ $location_data->longitude }}&hl=es&z=14&amp;output=embed">
+                                src="https://maps.google.com/maps?q={{ $location_data->latitude }},{{ $location_data->longitude }}&amp;output=embed">
                             </iframe>
                         </div>
 
@@ -112,11 +112,8 @@
                     </div>
                 </div>
                 <div class="social-links text-center text-md-right pt-3 pt-md-0">
-                    <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
                     <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
                     <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                    <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                    <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
                 </div>
             </div>
 
