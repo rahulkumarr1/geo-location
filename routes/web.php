@@ -17,4 +17,8 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
-Route::get('/', [GeoLocation::class, 'index']);
+
+Route::controller(GeoLocation::class)->group(function () {
+    Route::get('/', 'index')->name('home');
+    Route::get('ip-look-up', 'IpLookUp')->name('iplookup');
+});

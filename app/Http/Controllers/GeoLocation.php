@@ -28,4 +28,11 @@ class GeoLocation extends Controller
         }
         return request()->ip(); // it will return the server IP if the client IP is not found using this method.
     }
+
+    public function IpLookUp(Request $request){
+        $host = request()->getHttpHost();
+        $ip = ($host == "localhost") ? "103.117.154.18" : $this->getIp();
+        $location_data = \Location::get($ip);
+        return view('location-lookup', compact('location_data'));
+    }
 }

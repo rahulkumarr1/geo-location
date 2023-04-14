@@ -5,10 +5,10 @@
         <div class="container">
 
             <div class="d-flex justify-content-between align-items-center">
-                <h2>What Is My IP?</h2>
+                <h2>IP LOOK UP</h2>
                 <ol>
                     <li><a href="{{ route('home') }}">Home</a></li>
-                    <li>What Is My IP?</li>
+                    <li>IP LOOK UP</li>
                 </ol>
             </div>
 
@@ -23,7 +23,7 @@
 
                     <div class="col-lg-6">
                         <div class="portfolio-info">
-                            <h3>My IP address location:</h3>
+                            <h3>IP address location:</h3>
                             <ul>
                                 @php unset($location_data->driver); @endphp
                                 @foreach ($location_data as $lkey => $item)
