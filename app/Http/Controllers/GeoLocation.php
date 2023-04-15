@@ -12,7 +12,7 @@ class GeoLocation extends Controller
         $host = request()->getHttpHost();
         $ip = ($host == "localhost") ? "122.176.197.95" : $this->getIp();
         $location_data = Location::get($ip);
-        dd($location_data);
+        #dd($location_data);
         return view('location', compact('location_data'));
     }
 
