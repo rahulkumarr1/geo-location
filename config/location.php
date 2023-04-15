@@ -11,7 +11,7 @@ return [
     |
     */
 
-    'driver' => Stevebauman\Location\Drivers\IpInfo::class,
+    'driver' => Stevebauman\Location\Drivers\IpApi::class,
 
     /*
     |--------------------------------------------------------------------------
@@ -27,11 +27,11 @@ return [
 
     'fallbacks' => [
 
-        Stevebauman\Location\Drivers\IpInfo::class,
-
-        Stevebauman\Location\Drivers\GeoPlugin::class,
-
         Stevebauman\Location\Drivers\MaxMind::class,
+        Stevebauman\Location\Drivers\IpInfo::class,
+        Stevebauman\Location\Drivers\GeoPlugin::class,
+        Stevebauman\Location\Drivers\Cloudflare::class,
+        Stevebauman\Location\Drivers\IpApi::class,
 
     ],
 

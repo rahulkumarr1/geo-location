@@ -3,14 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Stevebauman\Location\Facades\Location;
 
 class GeoLocation extends Controller
 {
     public function index()
     {
         $host = request()->getHttpHost();
-        $ip = ($host == "localhost") ? "103.117.154.18" : $this->getIp();
-        $location_data = \Location::get($ip);
+        $ip = ($host == "localhost") ? "122.176.197.95" : $this->getIp();
+        $location_data = Location::get($ip);
+        dd($location_data);
         return view('location', compact('location_data'));
     }
 
@@ -34,7 +36,7 @@ class GeoLocation extends Controller
 
         if ($request->ajax()) {
             $request->validate([
-                'ip_addr' => 'required|ip',              
+                'ip_addr' => 'required|ip',
               ]);
             $host = request()->getHttpHost();
             $ip = $request->ip_addr;
