@@ -12,8 +12,9 @@ class GeoLocation extends Controller
         $host = request()->getHttpHost();
         $ip = ($host == "localhost") ? "122.176.197.95" : $this->getIp();
         $location_data = Location::get($ip);
+        $array_name = $this->getLocationName();
         #dd($location_data);
-        return view('location', compact('location_data'));
+        return view('location', compact('location_data', 'array_name'));
     }
 
     public function getIp()
@@ -37,12 +38,28 @@ class GeoLocation extends Controller
         if ($request->ajax()) {
             $request->validate([
                 'ip_addr' => 'required|ip',
-              ]);
+            ]);
             $host = request()->getHttpHost();
             $ip = $request->ip_addr;
             $location_data = \Location::get($ip);
-            return view('location-lookup-result', compact('location_data'));
+            $array_name = $this->getLocationName();
+            return view('location-lookup-result', compact('location_data', 'array_name'));
         }
         return view('location-lookup');
+    }
+
+    public function getLocationName()
+    {
+        $array_name = [
+            'ip' => 'IP',
+            'countryName' => 'Country',
+            'countryCode' => 'Country Code',
+            'regionCode' => 'Region Code',
+            'regionName' => 'Region Name',
+            'cityName' => 'City',
+            'zipCode' => 'Zip/Pincode',
+            'areaCode' => 'Area Code',
+        ];
+        return array_map('ucfirst', $array_name);
     }
 }

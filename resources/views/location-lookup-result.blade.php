@@ -1,15 +1,15 @@
 @if ($location_data)
     <div class="row gy-4">
-
         <div class="col-lg-6">
             <div class="portfolio-info">
                 <h3>My IP address location:</h3>
-                <ul>
+                <ul class="list-group">
                     @php unset($location_data->driver); @endphp
                     @foreach ($location_data as $lkey => $item)
                         @if (!empty($item))
-                            <li>
-                                <h4><strong>{{ $lkey }}</strong>: {{ $item }}</h4>
+                            <li class="list-group-item">
+                                <strong>{{ isset($array_name[$lkey]) ? $array_name[$lkey] : $lkey }}</strong> :
+                                    {{ $item }}
                             </li>
                         @endif
                     @endforeach
